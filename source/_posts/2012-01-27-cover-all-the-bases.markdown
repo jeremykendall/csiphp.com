@@ -20,7 +20,7 @@ if (stripos(strToUpper($string), $needle) !== false) {
 ```
 
 
-{% img http://csiphp.com/blog/wp-content/uploads/2012/01/all-bases-covered.jpg %}
+{% img /images/all-bases-covered.jpg %}
 
 Happy Friday, have an awesome weekend, and we'll see you next week.
 

@@ -11,7 +11,7 @@ categories:
 - PHP
 ---
 
-{% img http://csiphp.com/blog/wp-content/uploads/2011/07/criminal_abuse_of_globals.jpg %}
+{% img /images/criminal_abuse_of_globals.jpg %}
 
 We spend all of our time here at CSI: PHP teaching by counter-example.  And by "teaching by counter-example", I mean pointing and laughing at criminally horrific code.  Every once in a while, we'd like to add something to the mix to help teach by example.
 

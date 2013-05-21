@@ -14,4 +14,4 @@ So I ask the developer, "What are you using for version control?" With a straigh
 
 Here's what that mindset leaves you with.
 
-{% img http://csiphp.com/blog/wp-content/uploads/2011/07/svn_please.jpg %}
+{% img /images/svn_please.jpg %}
