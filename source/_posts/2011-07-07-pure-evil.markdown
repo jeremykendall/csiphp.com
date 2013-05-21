@@ -1,0 +1,55 @@
+---
+author: jeremykendall
+comments: true
+date: 2011-07-07 08:00:48
+layout: post
+slug: pure-evil
+title: Pure evil
+wordpress_id: 51
+categories:
+- PHP
+---
+
+This is a fun one. It's being called 12 separate times in a 228 line switch statement, with all of the calls inside [if/else](http://us.php.net/manual/en/control-structures.else.php) and nested if/else statements.
+
+```php
+<?php
+function getRules($conn, $dbn, $app, $table, $action, $actiontype, $RecordID='')
+{
+    global $self;
+    $savTBL = $table;
+    require_once "../common.inc";
+    if ((!$table) || ($table = '')) {
+        return(0);
+    } else {
+        $Q = "SELECT * FROM dbrules WHERE ontable = '$savTBL' AND onaction = '$action' AND app = '$app' AND actiontype = '$actiontype' ORDER BY doorder ";
+        $R = mSDoQuery($conn, $dbn, $Q);
+        if (mssql_num_rows($R) == 0) {
+            return(0);
+        }
+        While ($row = mssql_fetch_assoc($R)) {
+            foreach ($row AS $Key => $Value) {
+                $$Key = $Value;
+            }
+            if ($fromfile <> '') {
+                require_once "$fromfile";
+            }
+            if ($PassedValue <> '') {
+                eval("$PassedValue" . ";");
+            }
+            if ($doAction) {
+                eval("$doAction" . ";");
+            }
+        }
+    }
+}
+```
+
+A few details:
+
+* common.inc is a ~2,000 line file with 22 "common" functions, only one of which is used in `getRules()`.
+* Don't let `$self` fool you, this isn't a class method. `$self` is set to `$_SERVER['REQUEST_URI'];`.
+* The function parameters are set from from `$_GET`, an included config file, a database query, with only two being hard coded.
+* There are quite a few variables being set within the method by iterating through a database query result. I'm guessing `$fromfile`, `$PassedValue`, and `$doAction` are all set in that `foreach`. How many others?
+
+Evil.  Pure evil.

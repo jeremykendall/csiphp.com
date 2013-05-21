@@ -1,0 +1,22 @@
+---
+author: jeremykendall
+comments: true
+date: 2011-07-08 08:00:10
+layout: post
+slug: findexts
+title: findexts
+wordpress_id: 73
+categories:
+- PHP
+---
+```php
+<?php
+Function findexts ($filename) { 
+    $filename = strtolower($filename);
+    $exts = split("[/\\.]", $filename);
+    $n = count($exts)-1;
+    $exts = $exts[$n];
+    return $exts;
+}
+```
+Clever!  I see your custom function and I raise you [`pathinfo($filename, PATHINFO_EXTENSION)`](http://us2.php.net/pathinfo).

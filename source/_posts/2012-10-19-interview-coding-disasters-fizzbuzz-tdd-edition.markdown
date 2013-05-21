@@ -1,0 +1,103 @@
+---
+author: jeremykendall
+comments: true
+date: 2012-10-19 08:00:00
+layout: post
+slug: interview-coding-disasters-fizzbuzz-tdd-edition
+title: Interview Coding Disasters -- FizzBuzz (+ TDD) Edition
+wordpress_id: 645
+categories:
+- PHP
+- TDD
+tags:
+- fizzbuzz
+- interview
+- php
+- tdd
+---
+
+Today's anonymous submitter is shocked to discover that FizzBuzz really works (and TDD isn't as alive and well as he'd hoped).
+
+> A local company asked me for assistance recruiting a new PHP developer.  I helped them come up with a job description, a few interview questions, and I threw in the [FizzBuzz test](http://c2.com/cgi/wiki?FizzBuzzTest) for good measure.  Since they're working on implementing [Test Driven Development](http://en.wikipedia.org/wiki/Test-driven_development), I added " . . . bonus points for writing FizzBuzz using TDD."  I was horrified to see the massive fail that were the FizzBuzz submissions, but the single TDD submission took the cake.
+
+Interestingly, it looks like the FizzBuzz portion of the submission probably works.  It would have been a good idea if the submitter had read something, anything, about TDD before trying his hand at it in an interview situation.
+
+``` php
+<?php
+ 
+class FizzBuzzTest {
+    //build array that contains inputs 1-100
+    public function totalInput() {
+ 
+        $results = array();
+ 
+        for( $i=1; $i<=100; $i++ ) {
+            $results[] = $i;
+        }
+ 
+        return $results;
+    }
+ 
+    //build array that controls ttd test inputs 1-15
+    public function tddInput() {
+ 
+        $results = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+ 
+        return $results;
+    }
+ 
+    //compare tddInput with the expected results
+    public function testInput($source) {
+ 
+        if($source == 'short') {
+            $input = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+        } else if($source == 'long') {
+            $input = $this->totalInput();
+        }
+ 
+        $test = new runTest();
+ 
+        $expected = array(1,2,'Fizz',4,'Buzz','Fizz',7,8,'Fizz','Buzz',11,'Fizz',13,14,'FizzBuzz');
+ 
+        $testResults = $test->process($input);
+ 
+        if($source == 'long') {
+            return $testResults;
+        } else {
+            $this->assertEquals($expected, $testResults);
+        }
+    }
+}
+ 
+//replace multiples of 3 with FIZZ
+//replace multiples of 5 with BUZZ
+//replace multiples of 3 & 5 with FIZZBUZZ
+//if none apply, show number
+class runTest {
+    public function process($input) {
+ 
+        $results = array();
+ 
+        foreach($input as $value) {
+ 
+            $output = '';
+ 
+            if($value % 3 == 0 && $value % 5 == 0) {
+                $output = 'FizzBuzz';
+            } elseif($value % 3 == 0) {
+                $output = 'Fizz';
+            } elseif($value % 5 == 0) {
+                $output = 'Buzz';
+            } else {
+                $output = $value;
+            }
+ 
+            $results[] = $output;
+        }
+ 
+        return $results;
+    }
+}
+ 
+?>
+```

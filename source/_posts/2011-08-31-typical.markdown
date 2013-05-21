@@ -1,0 +1,28 @@
+---
+author: jeremykendall
+comments: true
+date: 2011-08-31 10:18:46
+layout: post
+slug: typical
+title: Typical
+wordpress_id: 282
+categories:
+- PHP
+---
+
+There's nothing wrong with testing your application with dirty, ugly scripts like this.  There is something wrong with dropping the test in the /includes folder, never deleting it, deploying it to production, and naming it editissues.php in an application where issue editing occurs.
+
+```php
+<?php
+
+$hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+$app = 'training_inc';
+$to = "redacted@example.com";
+$subject = "Hi!";
+$body = "Hi,\n\nHow are you?\n\n$_SERVER[REMOTE_ADDR]\n$hostname\n app=$app";
+if (mail($to, $subject, $body)) {
+    echo("<p>Message successfully sent!</p>");
+} else {
+    echo("<p>Message delivery failed...</p>");
+}
+``` 

@@ -1,0 +1,17 @@
+---
+author: jeremykendall
+comments: true
+date: 2011-07-05 13:22:25
+layout: post
+slug: eval-hell
+title: eval() hell
+wordpress_id: 11
+categories:
+- PHP
+---
+
+eval() shows up 23 times across 6 files in my current project.  Here's one of the most, er, interesting examples.
+``` php
+<?php
+eval("\$WhereVal = \"$row[WhereValue]\";");
+```
