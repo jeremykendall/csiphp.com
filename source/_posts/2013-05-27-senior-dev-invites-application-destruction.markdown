@@ -3,7 +3,10 @@ layout: post
 title: "Senior dev invites application destruction"
 date: 2013-05-27 12:48
 comments: true
-categories: PHP
+categories: 
+- PHP
+- MySQL
+- "SQL Injection"
 ---
 
 I'm not sure what else you'd call this besides an open invitation to face roll your 

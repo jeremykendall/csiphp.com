@@ -3,7 +3,7 @@ layout: post
 title: "DateTime What?"
 date: 2013-07-17 21:21
 comments: true
-categories: [PHP, Rube Goldberg, SQL, RTFM]
+categories: [PHP, "Rube Goldberg", SQL, RTFM]
 ---
 
 I've seen a lot of crazy, tortured interactions between PHP and databases in my career, but [this particular solution](http://thedailywtf.com/Articles/PHP-Doesnt-Have-Date-Functions-Either.aspx) to the problem of displaying future dates is one of the most tortured I've ever seen.

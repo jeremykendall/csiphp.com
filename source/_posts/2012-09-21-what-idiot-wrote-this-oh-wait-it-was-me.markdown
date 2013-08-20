@@ -7,12 +7,12 @@ slug: what-idiot-wrote-this-oh-wait-it-was-me
 title: What idiot wrote this? Oh, wait, it was me.
 wordpress_id: 615
 categories:
-- mea culpa
+- "mea culpa"
 - PHP
 ---
 
 Starting with this post, we have a new category here at CSI: PHP.  It's called 
-'[mea culpa](http://csiphp.com/blog/category/mea-culpa/)', and it's criminal 
+'[mea culpa](/blog/categories/mea-culpa/)', and it's criminal 
 code written by yours truly.
 
 Behold the awesome that is `error()`, an unholy concoction of PHP, JavaScript, 
