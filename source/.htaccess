@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.csiphp\.com$ [NC]   
+RewriteRule ^(.*)$ http://csiphp.com/$1 [R=301]
+RewriteRule ^blog/feed/?$ http://csiphp.com/atom.xml [R=301,L]
