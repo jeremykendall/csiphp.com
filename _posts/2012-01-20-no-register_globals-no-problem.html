@@ -1,0 +1,30 @@
+---
+layout: post
+title: No register_globals, no problem
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '546513552'
+---
+Today's entry comes courtesy of CSI: PHP Investigator <a href="https://twitter.com/#!/Hoggle_">Westin Shafer</a>.
+
+<blockquote>"So I found this today in a commercial product that we purchased and I know you'll want to pull your eyes out their sockets as I did when I found this.  The script was originally written for php4 and now they've gone through the refactoring to make this php 5 compliant ::cough::.   This script apparently relied on <a href="http://us.php.net/manual/en/ini.core.php#ini.register-globals">register_globals</a> to be set (which most php apps at the time did).  No problems, per-say, it was the trend back then... But now that PHP 5 is out and register_globals is no more, here's this guys solution to fix the problem...  Lazy like.
+
+Who needs register globals when you can just mock up your own?"</blockquote>
+
+<pre lang="php">
+function get_all_vars() {
+    $array=array('_GET', '_POST', '_SESSION', '_COOKIE');
+    foreach($array as $key => $var) {
+        global $$var;
+        foreach ($$var as $k => $v) {
+            global $$k;
+            $$k=$v;
+        }
+    }
+}
+</pre>

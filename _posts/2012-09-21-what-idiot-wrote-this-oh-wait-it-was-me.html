@@ -1,0 +1,39 @@
+---
+layout: post
+title: What idiot wrote this? Oh, wait, it was me.
+tags:
+- mea culpa
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  dsq_thread_id: ''
+  _edit_last: '1'
+---
+Starting with this post, we have a new category here at CSI: PHP.  It's called '<a href="http://csiphp.com/blog/category/mea-culpa/">mea culpa</a>', and it's criminal code written by yours truly.
+
+Behold the awesome that is <code>error()</code>, an unholy concoction of PHP, JavaScript, and HTML.  It's the only function in a file called common.php, which makes perfect sense because shut up.  Yes, this was in production use, and would dislpay a <a href="http://www.w3schools.com/jsref/met_win_alert.asp">JavaScript alert</a> with an error message whenever I remembered to use it.
+
+<pre lang="PHP">
+<?php // common.php
+
+function error($msg) {
+    ?>
+    <html>
+    <head>
+    <script language="JavaScript">
+    <!--
+        alert("<?=$msg?>");
+        history.back();
+    //-->
+    </script>
+    </head>
+    <body>
+    </body>
+    </html>
+    <?
+    exit;
+}
+?>
+</pre>

@@ -1,0 +1,40 @@
+---
+layout: post
+title: Who needs regular expressions?
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '534960417'
+---
+Thanks to <a href="http://twitter.com/#!/mosesngone">Moses Ngone</a> for submitting this super sweet router snippet.
+
+Moses writes:
+
+<blockquote>"If the regular expression route gets tough, be more specific."</blockquote>
+
+Indeed.
+
+<pre lang="php">
+$vars = str_replace(".php", "", $_SERVER['REQUEST_URI']);
+$vars = str_replace(".html", "", $vars);
+$vars = str_replace("pics/",'',$vars);
+$vars = str_replace("/pics",'',$vars);
+$vars = str_replace("pix/",'',$vars);
+$vars = str_replace("/pix",'',$vars);
+$vars = str_replace("photos/",'',$vars);
+$vars = str_replace("/photos",'',$vars);
+$vars = str_replace("photo/",'',$vars);
+$vars = str_replace("/photo",'',$vars);
+$vars = str_replace("gallery/",'',$vars);
+$vars = str_replace("/gallery",'',$vars);
+$vars = str_replace("galleries/",'',$vars);
+$vars = str_replace("/galleries",'',$vars);
+$vars = str_replace("//","/",$vars);
+$var_array = explode("/",$vars);
+</pre>
+
+Pro tip: If you find yourself doing something like this, don't.  There are <a href="http://www.slimframework.com/">tons</a> of <a href="http://symfony.com/">excellent</a> PHP <a href="http://zendframework.com/">frameworks</a> that take care of <a href="https://github.com/auraphp/Aura.Router">routing</a> for you.  If you really want to write your own, spend some time reading some framework's source code and unit tests to see how a few other folks have done it.

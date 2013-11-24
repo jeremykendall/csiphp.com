@@ -1,0 +1,22 @@
+---
+layout: post
+title: Overdoing it
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '377522209'
+---
+I am not making this shit up.
+<pre lang="PHP">
+Function mail_attachment($from, $to, $subject, $message, $attachment) {
+    . . .
+    $email_from = $from; // Who the email is from
+    $email_subject = $subject; // The Subject of the email
+    $email_txt = $message; // Message that the email has in it
+    $email_to = $to; // Who the email is to
+    . . .
+}</pre>

@@ -1,0 +1,38 @@
+---
+layout: post
+title: I do not think this function does what you think it does
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '384077347'
+---
+How 'bout a little data filtering before you go inserting user-generated data into that nice database of yours?  Here's a handy function that does just that.  No need to test this one; I know it outputs <i>exactly</i> what I expect.
+<pre lang="PHP">
+Function prepString($string) { // Specifically for MSSQL '' instead of \'
+    $badChars = array("'", "&", ",");
+    $goodChars = array("", "&amp;", "");
+
+    if (is_string($string)) {
+        $string = str_replace($badChars, $goodChars, $string);
+        $string = stripslashes($string);
+        $string = "$string";
+    }
+
+    return($string);
+}
+</pre>
+
+Here's an example of the function in use.
+<pre lang="PHP">
+foreach ($_POST as $x => $y) {
+    $_POST[$x] = prepString($y);
+}
+
+$query = "insert into table (column1, column2, column3, column4)
+    values('" . $_POST['input1'] . "','" . $_POST['input2'] 
+    . "', '" . $_POST['input3'] . "', '" . $_POST['input4'] . "')";
+</pre>

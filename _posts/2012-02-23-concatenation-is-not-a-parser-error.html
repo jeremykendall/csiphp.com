@@ -1,0 +1,29 @@
+---
+layout: post
+title: Concatenation is not a parser error
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '586661997'
+---
+CSI: PHP isn't big on the <a href="http://en.wikipedia.org/wiki/Perp_walk">perp walk</a>, but if your crime is (1) public and (2) licensed with an <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Attribution-NonCommercial-ShareAlike</a> Creative Commons license, then you kinda <a href="http://jayjohnston.com/php/possible-php-parser-error">perp walked yourself</a>.
+
+<pre lang="PHP">
+// What will this print out in php5?
+$earth = 'World';
+$string1 = "Hello " .
+$string2 = $earth . '!';
+$string = $string1 . $string2;
+
+echo $string;
+</pre>
+
+The author posits the output, <code>Hello World!World!</code>, is a possible parser error or internal assignment nonsense.  What <code>Hello World!World!</code> actually represents is PHP string handling and variable assignment 101.
+
+I will concede that determining the output of <code>$string</code> is something of a light brain teaser.  However, if you're confused by concatenation and variable assignment to the point that you <a href="http://jayjohnston.com/php/possible-php-parser-error">write a blog post about it</a> and present it as a parser error, I can only hope and pray you're trolling.
+
+Exit question, "If a plane crashes on the border of Canada and the United States, where do you bury the survivors?"

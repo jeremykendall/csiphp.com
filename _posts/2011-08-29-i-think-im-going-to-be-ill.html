@@ -1,0 +1,29 @@
+---
+layout: post
+title: I think I'm going to be ill . . .
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '399474795'
+---
+Yup, I just threw up in my mouth a little.
+<pre lang="PHP">
+foreach ($this->models as $model) {
+     $_file = '../' . $this->app . 'Models/' . $model . 'Model.php';
+     $_class = $model . 'Model';
+
+    if (file_exists($_file)) {
+        require_once $_file;
+        $this->{ucfirst($model)} = new $_class(null, dbConfig::$default);
+    } else {
+        $class = 'class ' . $_class . ' extends Model { }';
+        eval($class);
+        $this->{ucfirst($model)} = new $_class(null, dbConfig::$default);
+    }
+}
+</pre>
+<a href="https://gist.github.com/1158943">Source</a>

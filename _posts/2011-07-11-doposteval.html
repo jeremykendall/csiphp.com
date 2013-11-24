@@ -1,0 +1,26 @@
+---
+layout: post
+title: doPostEval()
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  dsq_thread_id: '378598630'
+  _edit_last: '1'
+---
+Post as in "after", yes, but also post as in <code><a href="http://www.php.net/manual/en/reserved.variables.post.php">$_POST</a></code>.  Eval as in our old enemy <code><a href="http://us.php.net/eval">eval()</a></code>.  This function is called on every single <code>$_POST</code> key/value pair after form submission.  <code>$On_Insert</code> is an array of executable PHP code stored in the database.  Figure out the rest of the misery yourself; I might jump off a cliff if I have to think through this code again.
+<pre lang="PHP">
+Function doPostEval($Key,$Value,$On_Insert)
+{
+    $Code = $On_Insert[$Key];
+    $xxx = '';
+    if ($Code <> '') {
+        eval($Code);
+        return($xxx);
+    } else {
+        return($Value);
+    }
+}
+</pre>

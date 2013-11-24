@@ -1,0 +1,33 @@
+---
+layout: post
+title: Maslow's hammer
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '377938625'
+---
+If all you have is PHP, everything looks like preprocessed hypertext.
+<pre lang="PHP">
+<?php
+print '
+<HTML>
+<HEAD>
+<!-- Send users to the new location. -->
+<TITLE>Acme Corp Redirect</TITLE>
+<META HTTP-EQUIV="refresh" 
+CONTENT="5;URL=http://anothersite.acmecorp.com"
+</HEAD>
+<BODY>
+<img src="images/logo_acme.gif" alt="Acme Corp Logo"><br><br>
+<strong>This page has moved. You will be 
+automatically redirected 
+to its new location in 5 seconds.
+If not <a href="http://anothersite.acmecorp.com">click here</a>.</strong> 
+</BODY>
+</HTML>';
+?>
+</pre>

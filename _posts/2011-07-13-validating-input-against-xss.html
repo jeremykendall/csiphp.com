@@ -1,0 +1,28 @@
+---
+layout: post
+title: Validating input against XSS
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  dsq_thread_id: '378598597'
+  _edit_last: '1'
+---
+The intent is self explanatory. The results are likely to be less than desirable.  I'm pretty sure this won't cover all possible use cases.
+
+<pre lang="PHP">
+Function noScript($text) {
+    if (preg_match_all('/http:\/\/pagead2.googlesyndication.com\/pagead\/show_ads.js/i', "$text", $ntext)) {
+        $text = str_replace($ntext[0], '', $text);
+    }
+    if (preg_match_all('/<script type="text\/javascript"/i', "$text", $ntext)) {
+        $text = str_replace($ntext[0], '<!--', $text);
+    }
+    if (preg_match_all('/<\/script>/i', "$text", $ntext)) {
+        $text = str_replace($ntext[0], '-->', $text);
+    }
+    return $text;
+}
+</pre>

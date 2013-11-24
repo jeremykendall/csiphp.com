@@ -1,0 +1,19 @@
+---
+layout: post
+title: Oh. That's where the mail function is called.
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  dsq_thread_id: '378599194'
+  _edit_last: '1'
+---
+<pre lang="PHP">
+eval( ''$RuleRes = cf_MailInsert($row,$id);'' )
+</pre>
+
+I still haven't found where in the database the eval'd string is coming from.  FML.
+
+For background see <a href="http://csiphp.com/blog/2011/07/07/pure-evil/">Pure evil</a>.  This function call is the result of the <code>eval("$doAction" . ";");</code> line.

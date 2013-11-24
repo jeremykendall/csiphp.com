@@ -1,0 +1,14 @@
+---
+layout: post
+title: eval() hell
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '378601560'
+---
+eval() shows up 23 times across 6 files in my current project.  Here's one of the most, er, interesting examples.
+<pre lang="php">eval("\$WhereVal = \"$row[WhereValue]\";");</pre>

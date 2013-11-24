@@ -1,0 +1,25 @@
+---
+layout: post
+title: How not to set a variable
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '378599584'
+---
+This is the wrong way to set a variable . . .
+
+<pre lang="PHP">
+foreach ($_POST as $Key => $Value) {
+    . . . 
+    $values .= "'$Value',";
+    . . .
+}</pre>
+. . . unless you really like unexpected behavior and notice messages.  This particular app throws notice after notice after notice.  It throws so many, in fact, that the vertical scroll bar on many pages is just a tiny little sliver for all the <a href="http://xdebug.org/">Xdebug</a> output.
+
+Pro Tip: develop with <a href="http://php.net/manual/en/function.error-reporting.php">error reporting</a> turned way, way up. (I usually use <code>error_reporting(-1)</code> in development.)
+
+<strong>UPDATE</strong>: I updated to code sample based on <a href="http://csiphp.com/blog/2011/07/06/how-not-to-set-a-variable/#comment-33">Dave's comment</a> that I may have introduced a bug during copy and paste.  Indeed I had.  Pop quiz: What do you think happens to <code>$values</code> after the <code>foreach()</code> exits?

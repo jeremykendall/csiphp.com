@@ -1,0 +1,32 @@
+---
+layout: post
+title: Query builder
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '377522164'
+---
+This is so bad ass.  I'm going to start using it in all my projects.  Wait, it's already in all my projects.  FML.
+
+<pre lang="PHP">
+Function BuildQuery() {
+    global $SelectValue;
+    global $FromValue;
+    global $WhereValue;
+    global $OrderValue;
+
+    $dbquery = $SelectValue;
+    $dbquery .= $FromValue;
+    $dbquery .= $WhereValue;
+    if ($OrderValue) {
+        $dbquery .= $OrderValue;
+    }
+    return($dbquery);
+}
+</pre>
+
+Bonus snark: Language construct?  What's a <a href="http://php.net/manual/en/function.return.php">language construct</a>?

@@ -1,0 +1,21 @@
+---
+layout: post
+title: findexts
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '377522141'
+---
+<pre lang="PHP">
+Function findexts ($filename) { 
+    $filename = strtolower($filename);
+    $exts = split("[/\\.]", $filename);
+    $n = count($exts)-1;
+    $exts = $exts[$n];
+    return $exts;
+}</pre>
+Clever!  I see your custom function and I raise you <code><a href="http://us2.php.net/pathinfo">pathinfo($filename, PATHINFO_EXTENSION)</a></code>.

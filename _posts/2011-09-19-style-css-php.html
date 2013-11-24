@@ -1,0 +1,57 @@
+---
+layout: post
+title: style.css.php
+tags:
+- Education
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '419186788'
+---
+The concept makes sense - <a href="http://en.wikipedia.org/wiki/Minification_(programming)">minify static assets</a> in order to make your pages smaller and therefore more responsive.  The execution leaves quite a lot to be desired.
+
+<pre lang="PHP">
+<?php
+// minifying the CSS
+header('Content-type: text/css');
+ob_start("compress");
+
+function compress($buffer) {
+    // remove comments
+    $buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
+    // remove tabs, spaces, newlines, etc.
+    $buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
+    return $buffer;
+}
+?>
+
+body {
+    background-color: #FFF;
+    color: black;
+    margin: 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// . . . snip . . .
+
+<?php ob_end_flush(); ?>
+</pre>
+
+Here are a few better ideas:
+<ul>
+	<li>Don't minimize anything at all. Is your site really that highly trafficked?</li>
+	<li>Manually minimize your CSS and JavaScript files using freely <a href="http://www.ventio.se/tools/minify-css/">available</a> <a href="http://www.refresh-sf.com/yui/">tools</a>.</li>
+	<li>Combine and minify your static assets during the build process using something like <a href="http://www.phing.info/trac/">Phing</a>.</li>
+</ul>
+
+

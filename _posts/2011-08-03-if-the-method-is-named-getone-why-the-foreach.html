@@ -1,0 +1,34 @@
+---
+layout: post
+title: If the method is named getOne, why the foreach?
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '377522285'
+---
+I'll leave this to you to rip apart.  My head hurts too bad from banging it against the desk to do any real analysis, and it's not even my code.
+
+<pre lang="PHP">
+class Db
+{
+    . . .
+
+    function getOneWithDetail($id=0)
+    {
+        $q = $this->createQuery('t')
+            ->orderBy('t.title ASC')
+            ->where('t.id = ?', $id);
+        $objCollection = $q->execute();
+        foreach ($objCollection as $objTitle) {
+            return $objTitle; //there should be only one 
+        }
+    }
+
+    . . .
+}
+</pre>
+Thanks to <a href="http://www.casivaagustin.com.ar/">Agustin Casiva</a> for the submission.

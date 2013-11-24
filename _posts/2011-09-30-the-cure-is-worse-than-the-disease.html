@@ -1,0 +1,71 @@
+---
+layout: post
+title: The cure is worse than the disease
+tags:
+- Education
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '430504407'
+---
+Oh, snap.
+
+<pre lang="PHP">
+function is_really_int(&$var) {
+    $num = (int) $var;
+    if ($var == $num) {
+        $var = $num;
+        return true;
+    }
+    return false;
+}
+</pre>
+
+This little bundle of joy really caught my attention. It's the <em>exact</em> type of code that drove me to launch CSI: PHP.
+
+<strong>Context</strong>
+
+Apparently, the developer wanted <code>is_int(sqrt(16))</code> to return true. Since the return value of <a href="http://us2.php.net/sqrt"><code>sqrt()</code></a> is always a float, the dev wrote <code>is_really_int()</code> to return true whenever the return value of <code>sqrt()</code> could be accurately represented as an integer.
+
+<strong>The horror</strong>
+
+Fair enough. I even feel dude's pain. But the cure is worse, oh so much worse, than the disease.  Here are a few reasons why.
+<ol>
+	<li>Userland method and function names should be descriptive.  I want to be able to know exactly (or have a good idea, at least) what's going to happen when I call your function.  If <a href="http://php.net/is_int"><code>is_int</code>()</a> returns false, then why is asking, "Really?" going to change matters?</li>
+	<li>Passing by reference? Why? Functions prefaced by "is" should do one thing only: test something and return a boolean.  Changing the value of <code>$var</code> when the input can be an int violates this principle, is totally unexpected, and <em>will</em> lead to unexpected behavior in your application.</li>
+	<li>This is the kind of code that you'll look at 6 months later and think, "Now what the hell does this do again?"  You'll want to shoot yourself in the face when you finally figure it out.</li>
+	<li>This is the kind of code that turns a maintenance developer into a <a href="http://c2.com/cgi/wiki?CodeForTheMaintainer">homicidal maniac</a>, and the maintainer is a bad mother-- (Shut your mouth!). I'm just talkin' about <a href="http://www.flickr.com/photos/jeremykendall/5762488063/">funkatron</a>! (Then we can dig it)</li>
+	<li>The function returns wildly unexpected results (and <a href="https://github.com/jeremykendall/int-or-not/blob/master/tests/IsReallyIntTest.php">I can prove it</a>).</li>
+</ol>
+<strong>Something better?</strong>
+
+Again, I feel dude's pain.  If I get a float that can be represented as an integer, I'd like to be able to test for that without jumping through hoops.  I whipped this up to try and solve the problem without the issues caused by <code>is_really_int()</code>.
+
+<pre lang="PHP">
+/**
+ * Tests if $var can be accurately represented as an integer.
+ * Note that boolean values return false, just like is_int()
+ * 
+ * @param mixed $var Value to test
+ * @return boolean 
+ */
+function valueCanBeInt($var)
+{
+    if (is_numeric($var) && $var == (int) $var) {
+        return true;
+    }
+
+    return false;
+}
+</pre>
+
+It's true that I might wonder what the hell <code>valueCanBeInt()</code> does 6 months down the road, but a quick glance at the documentation and the function will make it clear.  I might even come up with a better name for the function at that point and do a little refactoring.  I'd be able to refactor with confidence, as I've written some . . .
+
+<strong>Unit tests</strong>
+
+Like I said, this one really captured my attention. <a href="https://github.com/jeremykendall/int-or-not/tree/master/tests">I've written some unit tests</a> to demonstrate to myself and to you the dangerous side effects of <code>is_really_int()</code>. I ran the same tests against <code>valueCanBeInt</code>. The code and tests are <a href="https://github.com/jeremykendall/int-or-not">available on github</a>, if you're interested.
+
+<strong>UPDATE</strong>: I totally forgot to thank <a href="https://twitter.com/#!/Tyr43l/statuses/118670360869740544">@Tyr43l</a> for the submission.  Thanks Ferenc!

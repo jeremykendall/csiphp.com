@@ -1,0 +1,43 @@
+---
+layout: post
+title: No, let's get ALL the content at the same time!
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '407374955'
+---
+And let's store it all in session!  What's more, if there's a database error, let's go ahead and let the users know about it with echo!  <em>Brilliant</em>!
+<pre lang="PHP">
+class BestCmsContentClassEvar
+{
+    protected function get_content()
+    {
+        $sql = 'select * from content order by id;';
+        $result = $this->run_query($sql);
+        //echo('looking for content');
+        $i = 0;
+        while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+            if ($row['location'] == 'inc') {
+                $_SESSION['content_name'][$i] = $row['name'];
+                $_SESSION['content_title'][$i] = $row['title'];
+                $_SESSION['content'][$i] = 'inc';
+            } else {
+                $_SESSION['content_name'][$i] = $row['name'];
+                $_SESSION['content_title'][$i] = $row['title'];
+                $_SESSION['content'][$i] = $row['content'];
+            }
+            $i++;
+        }
+        echo(mysql_error());
+        mysql_close();
+    }
+}
+</pre>
+
+<strong>UPDATE</strong>:  Thanks to <a href="http://twitter.com/rob_oem">@Rob_OEM</a> for the image below.  It gave me the lulz.
+
+<img src="http://i.imgur.com/rM3BE.jpg" alt="" />

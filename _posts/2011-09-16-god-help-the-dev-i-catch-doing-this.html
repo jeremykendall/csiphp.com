@@ -1,0 +1,39 @@
+---
+layout: post
+title: God help the dev I catch doing this
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '416564282'
+---
+<ol>
+	<li>Make decision to prematurely optimize application</li>
+	<li>Choose the least helpful optimization first</li>
+	<li>Append the static asset text files with .php (AJS.jsmin.js.php in this case)</li>
+	<li>Use the <a href="http://us.php.net/manual/en/function.header.php">header()</a> function to <a href="http://condor.depaul.edu/dmumaugh/readings/handouts/SE435/HTTP/node24.html">manage caching</a> of static assets</li>
+        <li>Include new awesome cache controlled files in application</li>
+        <li>Leave it to maintenance programmer to resolve all the "Cannot modify header information" warnings</li>
+</ol>
+
+<pre lang="PHP">
+<?php 
+//	let the user cache this for to speed up their experience -- 10/23/2008
+	header("Content-type: text/javascript; charset: UTF-8");
+	header("Cache-Control: must-revalidate");
+	$offset = 60 * 60 * 24 * 90;	// 90 days for starters
+	$ExpStr = "Expires: " . 
+	gmdate("D, d M Y H:i:s",
+	time() + $offset) . " GMT";
+	header($ExpStr);
+?>
+
+AJS={BASE_URL:"",drag_obj:null,drag_elm:null,_drop_zones:[], . . .
+</pre>
+
+(NOTE: The ellipsis above indicates snipped, minified javascript)
+
+Along with promising to visit death upon developers using a technique like this, I'll pass along at least one better idea.  Here's an alternative from Greg Aker in his post, "<a href="http://www.gregaker.net/2011/aug/31/bust_yo_cache/">Bust 'yo cache!</a>".  Add yours in the comments

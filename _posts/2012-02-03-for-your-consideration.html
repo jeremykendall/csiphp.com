@@ -1,0 +1,42 @@
+---
+layout: post
+title: For your consideration
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '563347236'
+---
+This was sent along anonymously, along with the question:
+
+<blockquote>"Does this count as horror code or pure evil genius code?"</blockquote>
+
+What say you, dear reader?  I cut and paste, you decide.
+
+<pre lang="PHP">
+<?php
+
+function cli_parsestr($string, $config, $mainconf, $options, $custom = array())
+{
+    if (empty($string)) {
+        return '';
+    }
+    
+    $replaces = array(
+        'config' => '/%%$0%%/',
+        'mainconf' => '/%\*$0\*%/',
+        'options' => '/%&$0&%/',
+        'custom' => '/%\\\$$0\\\$%/',
+    );
+
+    foreach ($replaces as $var => $replace) {
+        if (!empty($$var) && is_array($$var)) {
+            $string = preg_replace(preg_replace('/.+/', $replace, array_keys($$var)), array_values($$var), $string);
+        }
+    }
+    return $string;
+}
+</pre>

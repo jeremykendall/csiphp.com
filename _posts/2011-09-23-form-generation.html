@@ -1,0 +1,27 @@
+---
+layout: post
+title: Form generation
+tags:
+- PHP
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+---
+Form generation has always been a sticky problem, IMHO. I happen to be a huge fan of Zend_Form for just that reason. In the many years prior to Zend_Form, I made a lot of mistakes and did a lot of stupid things in an attempt to make form generation easier. While I was truly horrified by BuildDBform(), it reminded me of a lot of my own early code.
+
+BuildDBform() is a 717 line monstrosity, featuring all of the following and more.
+<ol>
+	<li>Two parameters</li>
+	<li>Six global variables</li>
+	<li>Three switch statements (containing 30 total cases)</li>
+	<li>17 if() statements</li>
+	<li>Nine while() statements</li>
+	<li>(At least) 13 queries</li>
+	<li>Four eval() statements</li>
+	<li>Countless unquoted array keys</li>
+	<li>Stupid deep control structure nesting</li>
+</ol>
+<div><span style="font-size: small;"><span class="Apple-style-span" style="line-height: 24px;">There's more, but I can't bear to keep digging through the code.</span></span></div>
+<div>I'm not going to paste</div>

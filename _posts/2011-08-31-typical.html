@@ -1,0 +1,25 @@
+---
+layout: post
+title: Typical
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '400996440'
+---
+There's nothing wrong with testing your application with dirty, ugly scripts like this.  There is something wrong with dropping the test in the /includes folder, never deleting it, deploying it to production, and naming it editissues.php in an application where issue editing occurs.
+<pre lang="PHP">
+$hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+$app = 'training_inc';
+$to = "redacted@example.com";
+$subject = "Hi!";
+$body = "Hi,\n\nHow are you?\n\n$_SERVER[REMOTE_ADDR]\n$hostname\n app=$app";
+if (mail($to, $subject, $body)) {
+  echo("<p>Message successfully sent!</p>");
+ } else {
+  echo("<p>Message delivery failed...</p>");
+ }
+</pre>

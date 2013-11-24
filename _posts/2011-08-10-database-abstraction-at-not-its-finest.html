@@ -1,0 +1,39 @@
+---
+layout: post
+title: Database abstraction at not its finest
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '382293210'
+---
+I see what you're trying to do here, and I commend you for your creativity in problem solving, but I can't help but think you're doing it wrong.
+<pre lang="PHP">
+// MSSQL SQL string for getting top 5 rows from a query
+function top($value)
+{
+    if (DB_SERVER == 'MSSQL') {
+        $string = " TOP " . $value . " ";
+    } elseif (DB_SERVER == 'MYSQL') {
+        $string = "";
+    } else {
+        die('Error: Database server not supported !');
+    }
+    return $string;
+}
+
+// MYSQL SQL string for getting top 5 rows from a query
+function limit($value)
+{
+    if (DB_SERVER == 'MSSQL') {
+        $string = "";
+    } elseif (DB_SERVER == 'MYSQL') {
+        $string = " LIMIT 0, " . $value . " ";
+    } else {
+        die('Error: Database server not supported !');
+    }
+    return $string;
+}</pre>

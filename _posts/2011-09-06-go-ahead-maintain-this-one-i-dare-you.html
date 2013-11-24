@@ -1,0 +1,48 @@
+---
+layout: post
+title: Go ahead. Maintain this one. I dare you.
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  dsq_thread_id: '406330544'
+  _edit_last: '1'
+---
+Page titles are stored in a numerically indexed session array.  There are 22 cases in the switch statement and no default case.  The style_inc property sometimes contains javascript, but not always.  
+
+Go ahead.  Maintain this one.  I dare you. I <em>double-dog</em> dare you.
+
+<pre lang="PHP">
+class Page
+{
+
+    // . . .
+
+    function set_style_title($page, $i)
+    {
+        switch ($page) {
+            case 'home':
+                $this->title = $_SESSION['content_title'][$i];
+                $this->style_inc = '<link type="text/css" rel="stylesheet" href="media/style/common.css" />
+                                    <link type="text/css" rel="stylesheet" href="media/style/home.css" />';
+                break;
+            case 'lost_pass':
+                $this->title = $_SESSION['content_title'][$i];
+                $this->style_inc = '<link type="text/css" rel="stylesheet" href="media/style/common.css" />
+                                    <link type="text/css" rel="stylesheet" href="media/style/lost.css" />';
+                break;
+            case 'intro':
+                $this->title = $_SESSION['content_title'][$i];
+                $this->style_inc = '<link type="text/css" rel="stylesheet" href="media/style/common.css" />
+                                    <link type="text/css" rel="stylesheet" href="media/style/intro.css" />';
+                break;
+
+            // . . . 19 more cases, but no default case . . .
+        }
+    }
+
+    // . . .
+}
+</pre>

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Exception (mis)handling
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '396551533'
+---
+<em>Today's post was submitted by an anonymous CSI: PHP investigator.</em>
+
+There's some kind of design pattern going on here that I don't quite understand, I'm certain, because this is all over the place:
+
+<pre lang="PHP">
+try {
+    // 20 - 100 lines of code...
+} catch (Some_Application_Exception $e) {
+    // TODO: Log Exception and re-raise...
+} catch (Some_Framework_Exception $e) {
+    // TODO: Log Exception and re-raise...
+} catch (Exception $e) {
+    // TODO: Log Exception and re-raise...
+}
+</pre>
+
+This isn't the worst. Apparently, simply saving a code snippet to paste in with all those application and framework exceptions was getting tedious (never mind the cost of maintaining them), so this (d)evolved eventually into:
+
+<pre lang="PHP">
+try {
+    // 20 - 100 lines of code...
+} catch (Exception $e) {
+    // TODO: Log Exception and re-raise...
+}
+</pre>
+
+In the rare cases where the author was actually interested in the Exception thrown, we see lots of:
+
+<pre lang="PHP">
+try {
+    // 20 - 100 lines of code...
+} catch (Exception $e) {
+    if ($e instanceof Some_Very_Specific_Application_Exception) {
+        // Log Exception. That is all.
+    }
+}
+</pre>
+
+The backlog is peppered with White Screen of Death (WSOD) errors that have no diagnosis and few steps to reproduce... And then there are the Ajax requests that seemingly fail for no reason. If this was just in legacy code that could be traced to (read: blamed on) one or more former employees, that would be one thing, but it appears to be cultural at this point.

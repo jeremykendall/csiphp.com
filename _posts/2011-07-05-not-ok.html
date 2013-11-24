@@ -1,0 +1,32 @@
+---
+layout: post
+title: Not OK
+tags:
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '377522021'
+---
+This is not even <em>remotely</em> OK.
+<pre lang="PHP">
+foreach ($row as $key => $value) { 
+    $$key = $value;
+}
+</pre>
+
+<strong>UPDATE</strong>: The code sample above probably wasn't the best way to share exactly why I was so upset about the technique.  What's not at all obvious from the snippet is that the $row variable is a row returned from a database query, making it impossible to tell what variables are being set and what they're being set to simply by reading the code.  To make matters worse, the query that retrieves the database row is also stored in the database, and is assembled from a previous query.
+
+This probably would have been the better example, a function found in one of multiple 'function.inc' files spread across the project.
+<pre lang="PHP">
+Function loadConfig($app, $conn, $dbn)
+{
+    $Q = "SELECT * FROM conf WHERE application = '$app'";
+    $R = mSDoQuery($conn, $dbn, $Q);
+    While ($row = mssql_fetch_assoc($R)) {
+        $GLOBALS[$row[KeyName]] = $row[KeyValue];
+    }
+}
+</pre>
