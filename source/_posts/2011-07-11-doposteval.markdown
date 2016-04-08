@@ -8,6 +8,7 @@ title: doPostEval()
 wordpress_id: 80
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Post as in "after", yes, but also post as in [`$_POST`](http://www.php.net/manual/en/reserved.variables.post.php).  Eval as in our old enemy [`eval()`](http://us.php.net/eval).  This function is called on every single `$_POST` key/value pair after form submission.  `$On_Insert` is an array of executable PHP code stored in the database.

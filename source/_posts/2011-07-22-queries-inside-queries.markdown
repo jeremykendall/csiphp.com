@@ -9,6 +9,7 @@ wordpress_id: 119
 categories:
 - Apache
 - PHP
+author: "Jeremy Kendall"
 ---
 
 {% img http://content.screencast.com/users/brianlmoon/folders/Jing/media/ce02b99e-a2b2-4005-a1f4-dc97bfc91c74/00000085.png %}

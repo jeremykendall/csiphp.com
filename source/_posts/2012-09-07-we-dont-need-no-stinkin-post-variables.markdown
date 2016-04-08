@@ -8,6 +8,7 @@ title: We don't need no stinkin' POST variables
 wordpress_id: 590
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 CSI: PHP investigator [Duane Gran](https://twitter.com/duanegran) sent in this horrifying snippet.  He explains:

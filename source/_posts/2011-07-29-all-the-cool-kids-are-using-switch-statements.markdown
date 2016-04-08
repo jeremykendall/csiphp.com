@@ -8,6 +8,7 @@ title: All the cool kids are using switch statements
 wordpress_id: 169
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 But I'm guessing all the cool kids don't use switch statements like this guy.

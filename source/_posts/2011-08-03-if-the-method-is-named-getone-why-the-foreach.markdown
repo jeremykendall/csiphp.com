@@ -8,6 +8,7 @@ title: If the method is named getOne, why the foreach?
 wordpress_id: 181
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 I'll leave this to you to rip apart.  My head hurts too bad from banging it against the desk to do any real analysis, and it's not even my code.

@@ -8,6 +8,7 @@ title: Exception (mis)handling
 wordpress_id: 261
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 _Today's post was submitted by an anonymous CSI: PHP investigator._

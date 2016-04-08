@@ -8,6 +8,7 @@ title: No, let's get ALL the content at the same time!
 wordpress_id: 296
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 And let's store it all in session!  What's more, if there's a database error, let's go ahead and let the users know about it with echo!  _Brilliant_!

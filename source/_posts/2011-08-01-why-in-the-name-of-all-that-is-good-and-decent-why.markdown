@@ -8,6 +8,7 @@ title: Why? In the name of all that is good and decent, why?
 wordpress_id: 146
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 This is one of the few comment blocks that accurately describes the code contained in the script. I wish it didn't.

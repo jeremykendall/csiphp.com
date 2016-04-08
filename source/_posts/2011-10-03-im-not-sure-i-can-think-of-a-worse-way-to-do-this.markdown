@@ -8,6 +8,7 @@ title: I'm not sure I can think of a worse way to do this
 wordpress_id: 426
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 If I think about it real hard, I might be able to find a worse way, but I don't think I'm that smart.

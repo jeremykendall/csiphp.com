@@ -8,6 +8,7 @@ title: Constants? We don't need no stinking constants!
 wordpress_id: 202
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 [`PHP_MAJOR_VERSION`](http://php.net/manual/en/reserved.constants.php)?  Screw it, I'll do it myself.

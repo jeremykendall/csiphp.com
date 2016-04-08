@@ -8,6 +8,7 @@ title: findexts
 wordpress_id: 73
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 ```php
 <?php

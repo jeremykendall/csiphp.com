@@ -8,6 +8,7 @@ title: I beg to differ
 wordpress_id: 89
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 So I ask the developer, "What are you using for version control?" With a straight face, dude answers, "There's only one developer. We don't need version control."

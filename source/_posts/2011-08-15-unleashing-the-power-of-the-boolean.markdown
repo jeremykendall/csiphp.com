@@ -8,6 +8,7 @@ title: Unleashing the power of the boolean
 wordpress_id: 221
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Now witness the firepower of this fully ARMED and OPERATIONAL boolean conversion function! 

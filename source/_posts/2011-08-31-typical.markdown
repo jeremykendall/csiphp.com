@@ -8,6 +8,7 @@ title: Typical
 wordpress_id: 282
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 There's nothing wrong with testing your application with dirty, ugly scripts like this.  There is something wrong with dropping the test in the /includes folder, never deleting it, deploying it to production, and naming it editissues.php in an application where issue editing occurs.

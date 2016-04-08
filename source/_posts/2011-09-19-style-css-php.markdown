@@ -9,6 +9,7 @@ wordpress_id: 334
 categories:
 - Education
 - PHP
+author: "Jeremy Kendall"
 ---
 
 The concept makes sense - [minify static assets](http://en.wikipedia.org/wiki/Minification_(programming)) in order to make your pages smaller and therefore more responsive.  The execution leaves quite a lot to be desired.

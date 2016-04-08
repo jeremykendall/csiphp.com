@@ -7,6 +7,7 @@ categories:
 - PHP
 - MySQL
 - "SQL Injection"
+author: "Jeremy Kendall"
 ---
 
 > Today's entry is a guest post the from world-renowned [Michelangelo van Dam](https://twitter.com/DragonBe), PHP master, community hero, consultant, and all around nice guy.  Thanks for the post, Mike!

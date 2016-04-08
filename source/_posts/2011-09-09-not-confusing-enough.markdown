@@ -8,6 +8,7 @@ title: Not confusing enough
 wordpress_id: 308
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 No, go ahead, add a little more abstraction.  Don't mind me, I'm just trying to maintain it is all.

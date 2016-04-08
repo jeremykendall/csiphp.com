@@ -8,6 +8,7 @@ title: Too few DEFINEs for my taste
 wordpress_id: 624
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 ##The Crime##

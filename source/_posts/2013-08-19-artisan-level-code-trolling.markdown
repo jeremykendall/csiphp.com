@@ -4,6 +4,7 @@ title: "Artisan Level Code Trolling"
 date: 2013-08-19 13:19
 comments: true
 categories: [ "PHP", "Trolling", "Humor" ]
+author: "Jeremy Kendall"
 ---
 *WARNING: The code you're about to view is intended for mature audiences and
 may not be suitable for all readers.*

@@ -8,6 +8,7 @@ title: The Interview
 wordpress_id: 536
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Yes, this really happened.

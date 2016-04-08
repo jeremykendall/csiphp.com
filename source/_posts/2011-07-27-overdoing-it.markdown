@@ -8,6 +8,7 @@ title: Overdoing it
 wordpress_id: 135
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 I am not making this shit up.

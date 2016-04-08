@@ -8,6 +8,7 @@ title: Stop rolling your own
 wordpress_id: 604
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Seriously.  Stop it.  Or you'll end up with garbage like this, in which a developer 

@@ -8,6 +8,7 @@ title: I do not think DRY means what you think it means
 wordpress_id: 572
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Perhaps this developer decided it would be better to create convenience methods than to litter their codebase with date format strings.  Nothing wrong with trying to [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) up your code, but creating 13 inscrutably named date formatting functions ain't the way to do it.

@@ -8,6 +8,7 @@ title: I think I'm going to be ill . . .
 wordpress_id: 275
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Yup, I just threw up in my mouth a little.

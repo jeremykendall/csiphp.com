@@ -4,6 +4,7 @@ title: "No Way That's Real"
 date: 2013-08-27 21:25
 comments: true
 categories: [Trolling, PHP]
+author: "Jeremy Kendall"
 ---
 
 I thought that Graham was the most [devious PHP code troll I'd ever met](http://csiphp.com/blog/2013/08/19/artisan-level-code-trolling/).

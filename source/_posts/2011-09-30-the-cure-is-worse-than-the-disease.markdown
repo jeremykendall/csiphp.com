@@ -9,6 +9,7 @@ wordpress_id: 356
 categories:
 - Education
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Oh, snap.

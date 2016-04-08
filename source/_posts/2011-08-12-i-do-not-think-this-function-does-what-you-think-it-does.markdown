@@ -8,6 +8,7 @@ title: I do not think this function does what you think it does
 wordpress_id: 216
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 How 'bout a little data filtering before you go inserting user-generated data into that nice database of yours?  Here's a handy function that does just that.  No need to test this one; I know it outputs _exactly_ what I expect.

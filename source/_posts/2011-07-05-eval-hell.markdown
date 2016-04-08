@@ -8,6 +8,7 @@ title: eval() hell
 wordpress_id: 11
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 eval() shows up 23 times across 6 files in my current project.  Here's one of the most, er, interesting examples.

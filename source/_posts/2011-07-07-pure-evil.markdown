@@ -8,6 +8,7 @@ title: Pure evil
 wordpress_id: 51
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 This is a fun one. It's being called 12 separate times in a 228 line switch statement, with all of the calls inside [if/else](http://us.php.net/manual/en/control-structures.else.php) and nested if/else statements.

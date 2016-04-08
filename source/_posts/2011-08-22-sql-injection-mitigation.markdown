@@ -9,6 +9,7 @@ wordpress_id: 248
 categories:
 - Education
 - "SQL Injection"
+author: "Jeremy Kendall"
 ---
 
 You should probably study up on how to [defend against SQL Injection attacks](http://docs.php.net/manual/sr/security.database.sql-injection.php), unless you'd like to [end up like these guys](http://xkcd.com/327/).

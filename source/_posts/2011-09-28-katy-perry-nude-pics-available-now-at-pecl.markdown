@@ -8,6 +8,7 @@ title: Katy Perry Nude pics - available now at PECL!
 wordpress_id: 345
 categories:
 - Other
+author: "Jeremy Kendall"
 ---
 
 If [this](http://pecl.php.net/user/katyperry) isn't criminally hilarious, I don't know funny.

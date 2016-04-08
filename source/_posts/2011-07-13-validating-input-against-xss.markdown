@@ -8,6 +8,7 @@ title: Validating input against XSS
 wordpress_id: 96
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 The intent is self explanatory. The results are likely to be less than desirable.  I'm pretty sure this won't cover all possible use cases.
 

@@ -8,6 +8,7 @@ title: Concatenation is not a parser error
 wordpress_id: 555
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 CSI: PHP isn't big on the [perp walk](http://en.wikipedia.org/wiki/Perp_walk), but if your crime is (1) public and (2) licensed with an [Attribution-NonCommercial-ShareAlike](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) Creative Commons license, then you kinda [perp walked yourself](http://jayjohnston.com/php/possible-php-parser-error).

@@ -9,6 +9,7 @@ wordpress_id: 615
 categories:
 - "mea culpa"
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Starting with this post, we have a new category here at CSI: PHP.  It's called 

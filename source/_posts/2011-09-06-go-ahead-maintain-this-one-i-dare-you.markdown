@@ -8,6 +8,7 @@ title: Go ahead. Maintain this one. I dare you.
 wordpress_id: 286
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Page titles are stored in a numerically indexed session array.  There are 22 cases in the switch statement and no default case.  The style_inc property sometimes contains javascript, but not always.  

@@ -8,6 +8,7 @@ title: Cover all the bases
 wordpress_id: 519
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Criminal?  No, but it's pretty damned funny.  Something of a palate cleanser, if you will.

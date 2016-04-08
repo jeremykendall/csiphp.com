@@ -8,6 +8,7 @@ title: Really? preg_replace()?
 wordpress_id: 46
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 I found this in a database connection config file.  How many problems do you see with this?  I'll give you a head start -- [preg_replace()](http://us.php.net/preg_replace) is overkill.  And by overkill, I mean "absolutely unnecessary".

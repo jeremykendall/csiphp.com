@@ -9,6 +9,7 @@ wordpress_id: 545
 categories:
 - Education
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Thanks to Justin Carmony for this awesome slice of fail.

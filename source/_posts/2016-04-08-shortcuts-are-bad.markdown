@@ -3,7 +3,8 @@ layout: post
 title: "Shortcuts Are Bad"
 date: 2016-04-08 14:34
 comments: true
-categories: 
+categories: [ "PHP", "PDO" ]
+author: "Joe Ferguson"
 ---
 
 Friend of mine asked me to take a look at his PHP script. The original scope was to call this script via ajax, posting an email address to get saved to a database. 

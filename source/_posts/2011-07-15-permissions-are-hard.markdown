@@ -8,6 +8,7 @@ title: Permissions are hard
 wordpress_id: 108
 categories:
 - Apache
+author: "Jeremy Kendall"
 ---
 
 [Justin Carmony](http://www.justincarmony.com/blog/) writes

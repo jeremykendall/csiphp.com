@@ -8,6 +8,7 @@ title: Not OK
 wordpress_id: 28
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 This is not even _remotely_ OK.

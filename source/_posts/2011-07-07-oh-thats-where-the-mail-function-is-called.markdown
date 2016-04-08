@@ -8,6 +8,7 @@ title: Oh. That's where the mail function is called.
 wordpress_id: 67
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 ```php
 <?php

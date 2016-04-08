@@ -8,6 +8,7 @@ title: Who needs regular expressions?
 wordpress_id: 487
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Thanks to [Moses Ngone](http://twitter.com/#!/mosesngone) for submitting this super sweet router snippet.

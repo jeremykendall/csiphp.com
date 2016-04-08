@@ -8,6 +8,7 @@ title: Database abstraction at not its finest
 wordpress_id: 213
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 I see what you're trying to do here, and I commend you for your creativity in problem solving, but I can't help but think you're doing it wrong.

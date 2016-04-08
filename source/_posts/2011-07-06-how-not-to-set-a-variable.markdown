@@ -8,6 +8,7 @@ title: How not to set a variable
 wordpress_id: 54
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 This is the wrong way to set a variable . . .

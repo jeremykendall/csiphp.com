@@ -8,6 +8,7 @@ title: Templating gone horribly wrong
 wordpress_id: 468
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Using any form of templating, even if it's just including a header.php and footer.php in each page, is supposed to make a developer's life easier.  Imagine the confusion the below code causes when, as you're reviewing some new code, you run across a seemingly random `</head>` tag.  Where is the rest of the markup, you might ask?  Why, take a look at `doPageHead()`, silly.

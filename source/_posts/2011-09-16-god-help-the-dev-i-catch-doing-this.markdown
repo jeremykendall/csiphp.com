@@ -8,6 +8,7 @@ title: God help the dev I catch doing this
 wordpress_id: 315
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 1. Make decision to prematurely optimize application

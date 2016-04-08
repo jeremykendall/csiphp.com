@@ -8,6 +8,7 @@ title: Maslow's hammer
 wordpress_id: 130
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 If all you have is PHP, everything looks like preprocessed hypertext.
 ``` php

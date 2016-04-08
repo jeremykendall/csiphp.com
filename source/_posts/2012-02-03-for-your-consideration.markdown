@@ -8,6 +8,7 @@ title: For your consideration
 wordpress_id: 527
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 This was sent along anonymously, along with the question:

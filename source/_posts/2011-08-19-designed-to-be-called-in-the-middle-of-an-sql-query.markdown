@@ -8,6 +8,7 @@ title: Designed to be called in the middle of an SQL query
 wordpress_id: 234
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 ". . . to simplify both the readability and repeatability of the query."  Yeah, I'm not sure it does that, especially when your function's comments are TL;DR.

@@ -8,6 +8,7 @@ title: Your admin password is editsally
 wordpress_id: 188
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 I'm not sure if this is what the original developer sent to the client once the app was finished, but I think I'm probably pretty close.

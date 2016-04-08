@@ -8,6 +8,7 @@ title: Query builder
 wordpress_id: 101
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 This is so bad ass.  I'm going to start using it in all my projects.  Wait, it's already in all my projects.  FML.

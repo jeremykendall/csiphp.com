@@ -8,6 +8,7 @@ title: doBuildEditTableList
 wordpress_id: 252
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 My favorite parts are the relative links in to the stylesheet and the image. Write once, use only in a very specific subdirectory. Genius.

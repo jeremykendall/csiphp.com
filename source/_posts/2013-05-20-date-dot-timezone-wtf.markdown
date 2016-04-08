@@ -4,6 +4,7 @@ title: "date.timezone WTF?"
 date: 2013-05-20 23:55
 comments: true
 categories: PHP
+author: "Jeremy Kendall"
 ---
 
 CSI: PHP Investigator [@jsundquist](https://twitter.com/jsundquist) recently forwarded 

@@ -7,6 +7,7 @@ categories:
 - PHP
 - MySQL
 - "SQL Injection"
+author: "Jeremy Kendall"
 ---
 
 I'm not sure what else you'd call this besides an open invitation to face roll your 

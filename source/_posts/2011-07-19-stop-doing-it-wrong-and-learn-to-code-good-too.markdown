@@ -9,6 +9,7 @@ wordpress_id: 158
 categories:
 - Education
 - PHP
+author: "Jeremy Kendall"
 ---
 
 {% img /images/criminal_abuse_of_globals.jpg %}

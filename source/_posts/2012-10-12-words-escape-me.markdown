@@ -8,6 +8,7 @@ title: Words escape me
 wordpress_id: 637
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Look, I know this is going to be tough to read, and I usually try to post short, snappy code snippets, but this is just too good.  Or sad.  Whatever.  Words truly escape me.

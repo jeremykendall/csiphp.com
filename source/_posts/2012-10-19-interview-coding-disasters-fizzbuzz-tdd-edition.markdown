@@ -14,6 +14,7 @@ tags:
 - interview
 - php
 - tdd
+author: "Jeremy Kendall"
 ---
 
 Today's anonymous submitter is shocked to discover that FizzBuzz really works (and TDD isn't as alive and well as he'd hoped).

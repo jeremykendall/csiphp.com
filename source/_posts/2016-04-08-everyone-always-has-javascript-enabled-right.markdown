@@ -3,7 +3,8 @@ layout: post
 title: "Everyone ALWAYS has JavaScript enabled right?"
 date: 2016-04-08 14:36
 comments: true
-categories: 
+categories: [ "PHP", "PDO" ]
+author: "Joe Ferguson"
 ---
 
 A JavaScript redirect is a fairly simple technique to easily redirect your users to a new location. Within the confines of a PHP application if you need the parent window's URL, JavaScript is the easiest way to grab that info.

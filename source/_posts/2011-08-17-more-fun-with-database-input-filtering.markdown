@@ -8,6 +8,7 @@ title: More fun with database input filtering
 wordpress_id: 228
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 And I thought [`prepString()`](http://csiphp.com/blog/2011/08/12/i-do-not-think-this-function-does-what-you-think-it-does/) was the pinnacle of awesome.

@@ -8,6 +8,7 @@ title: No register_globals, no problem
 wordpress_id: 504
 categories:
 - PHP
+author: "Jeremy Kendall"
 ---
 
 Today's entry comes courtesy of CSI: PHP Investigator [Westin Shafer](https://twitter.com/#!/Hoggle_).
