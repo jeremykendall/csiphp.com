@@ -111,7 +111,7 @@ More discussion found at [stackoverflow](http://stackoverflow.com/questions/2109
 
 ### Recap
 
-Rolling your own functionality that PHP already provides is silly. If you believe you need to do this do some searching. You've probably either found an edge case or you need to do some refactoring.
+Rolling your own functionality that PHP already provides is silly. If you believe you need to do this; do some searching. You've probably either found an edge case or you need to do some refactoring.
 
 
 Thanks for Reading. Happy Coding!
