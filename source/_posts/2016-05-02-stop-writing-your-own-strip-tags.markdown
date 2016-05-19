@@ -72,7 +72,8 @@ Assuming you don't have ridiculous encoding issues here are some better alternat
 if (function_exists('replace_whitespace') === FALSE) {
     function replace_whitespace($str) {
 
-    return trim($str);
+        return trim($str);
+    }
 }
 ```
 
