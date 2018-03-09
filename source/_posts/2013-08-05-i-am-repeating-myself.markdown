@@ -47,7 +47,7 @@ Filter all incoming data, no matter if they come from user input, database, web 
 
 Ensure this incoming data is always in the format you want and validates to rules you have defined. Yes, it's a lot of work to filter and validate everything, but a lot less to clean up your database when they've done a "Little Bobby Tables" on your application.
 
-{% img http://imgs.xkcd.com/comics/exploits_of_a_mom.png %}
+{% img https://imgs.xkcd.com/comics/exploits_of_a_mom.png %}
 
 Use an abstraction layer like PDO and properly prepare statements with named variables to ensure data will be properly escaped before it enters your database. Even if you haven't taken the time to sanitise your data, this will be your final line of defence. Use it! Period!!!
 
