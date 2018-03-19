@@ -16,4 +16,4 @@ eval( ''$RuleRes = cf_MailInsert($row,$id);'' )
 ```
 I still haven't found where in the database the eval'd string is coming from.  FML.
 
-For background see [Pure evil](/2011/07/07/pure-evil/).  This function call is the result of the `eval("$doAction" . ";");` line.
+For background see [Pure evil](/blog/2011/07/07/pure-evil/).  This function call is the result of the `eval("$doAction" . ";");` line.
